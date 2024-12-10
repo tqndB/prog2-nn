@@ -32,8 +32,6 @@ for image_batch, label_batch in dataloader_test:
     print(image.shape)
     break
 
-
-
 def test_accuracy(model, dataloader):
     n_corrects = 0
 
