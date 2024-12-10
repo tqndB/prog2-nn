@@ -2,6 +2,8 @@ import time
 
 import matplotlib.pyplot as plt
 
+
+
 import torch
 from torchvision import datasets
 import torchvision.trainforms.v2 as transforms
@@ -57,15 +59,20 @@ print(f'test accuracy: {acc_test*100:.3f}%')
 
 n_epochs = 5
 
+
+
+
+
+
+
+
+
 for k in range(n_epochs):
     print(f'epoch {k+1}/{n_epochs}', end=': ', flush=True)
-
     loss_train = models.train(model, dataloader, loss_fn, optimizer)
     print(f'train loss: {loss_train}')
-
     loss_test = models.test(model, dataloader_test, loss_fn)
     print(f'test loss: {loss_test}')
-
     acc_train = models.test_accuracy(model, dataloader_test)
     print(f'test accuracy: {acc_train*100:.2f}%')
     acc_test = models.test_accuracy(model, dataloader_test)
